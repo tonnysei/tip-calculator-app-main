@@ -40,6 +40,14 @@ const verifyNumber = (bill, tip, people) => {
     document.querySelector('.tip-errorMessage').innerHTML = ""
   }
 
+  if(!document.querySelector('.isToggled')) {
+    document.querySelector('.tip-errorMessage').innerHTML = "please select a tip option"
+    result = false
+  } else {
+    document.querySelector('.tip-errorMessage').innerHTML = ""
+  }
+
+
   if(people*1 != people || people <= 0 || Math.round(people) != people) {
     document.querySelector('.people-errorMessage').innerHTML = "please enter a valid number"
     result = false
@@ -98,6 +106,13 @@ document.querySelector('body').addEventListener('keydown', (event) => {
     calculate()
   }
 })
+
+for(let i = 0; i < 5; i++) {
+  document.querySelector(`.btn${i}`).addEventListener('click', () => {
+    calculate()
+  })
+}
+
 
 
 const reset = () => {

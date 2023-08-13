@@ -36,11 +36,7 @@ const verifyNumber = (bill, tip, people) => {
   if((tip*1 != tip|| tip <= 0) && document.querySelector('.btn5').classList.contains('isToggled')) {
     document.querySelector('.tip-errorMessage').innerHTML = "please enter a valid number"
     result = false
-  } else {
-    document.querySelector('.tip-errorMessage').innerHTML = ""
-  }
-
-  if(!document.querySelector('.isToggled')) {
+  } else if(!document.querySelector('.isToggled') && !document.querySelector('.btn5').classList.contains('isToggled')) {
     document.querySelector('.tip-errorMessage').innerHTML = "please select a tip option"
     result = false
   } else {

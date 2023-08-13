@@ -33,7 +33,7 @@ const verifyNumber = (bill, tip, people) => {
   }
 
 
-  if(tip*1 != tip|| tip <= 0) {
+  if((tip*1 != tip|| tip <= 0) && document.querySelector('.btn5').classList.contains('isToggled')) {
     document.querySelector('.tip-errorMessage').innerHTML = "please enter a valid number"
     result = false
   } else {
